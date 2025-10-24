@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* ===========================================================
+   🌑 Fabelo Motor — Versión Fluida + Premium + Sin pérdida
+   =========================================================== */
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -112,11 +116,61 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* ===== BASE OPTIMIZADA ===== */
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
     @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
+}
+
+/* ===== Scrollbar Premium ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e50914, #ff4b4b);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff4b4b, #e50914);
+}
+
+/* ===== Selección personalizada ===== */
+::selection {
+  background-color: #e50914;
+  color: #fff;
+}
+
+/* ===== Fade-in reutilizable ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out both;
+}
+
+/* ===== Botón WhatsApp flotante ===== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.whatsapp-float {
+  animation: float 2s ease-in-out infinite;
 }
